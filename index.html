@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="./E.commerce/style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | E-commerce product page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+    <!-- Main Section Start -->
+    <main class="main">
+      <header class="header" id="header">
+
+          <div class="nav-nav">
+              <img src="./E.commerce/images/icon-menu.svg" alt="hamburger" class="hamburger">
+
+
+              <div>
+                  <img src="./E.commerce/images/logo.svg" alt="" class="logo">
+              </div>
+  
+              <nav class="nav-menu">
+                  <ul class="nav-list">
+                      <li>
+                          <a href="#" class="nav-link">Collections</a>
+                      </li>
+                      <li>
+                          <a href="#" class="nav-link">Men</a>
+                      </li>
+                      <li>
+                          <a href="#" class="nav-link">Women</a>
+                      </li>
+                      <li>
+                          <a href="#" class="nav-link">About</a>
+                      </li>
+                      <li>
+                          <a href="#" class="nav-link">Contract</a>
+                      </li>
+
+                      <img src="./E.commerce/images/icon-close.svg" alt="close" class="close">
+                  </ul>
+              </nav>
+          </div>
+
+          <div class="nav-images">
+              <div>
+                  <!-- <span class="cart-alert">3</span> -->
+              <img src="./E.commerce/images/icon-cart.svg" alt="cart log" class="cart-logo">
+              </div>
+
+              <img src="./E.commerce/images/image-avatar.png" alt="Image Avatar" class="image-avatar">
+          </div>
+      </header>
+
+      <!-- flex section start-->
+
+      <section class="section-flex">
+
+          <!-- image section start -->
+
+          <section class="section-image">
+              <div class="direction">
+                  <img src="./E.commerce/images/icon-previous.svg" alt="" class="backward">
+                  <img src="./E.commerce/images/icon-next.svg" alt="" class="forward">
+              </div>
+              <img src="./E.commerce/images/image-product-1.jpg" alt="" id="big-image">
+
+              <div class="thumbnails">
+                  <img src="./E.commerce/images/image-product-1-thumbnail.jpg" data-id="0" alt="" class="thumbnail-1 thumbnail">
+
+                  <img src="./E.commerce/images/image-product-2-thumbnail.jpg" data-id="1" alt="" class="thumbnail-2 thumbnail">
+
+                  <img src="./E.commerce/images/image-product-3-thumbnail.jpg" data-id="2" alt="" class="thumbnail-3 thumbnail">
+
+                  <img src="./E.commerce/images/image-product-4-thumbnail.jpg" data-id="3" alt="" class="thumbnail-4 thumbnail">
+              </div>
+
+          <!-- image section end -->
+          </section>
+
+          <!-- info section start -->
+
+          <section class="section-info">
+              <h4 class="company-header">sneaker company</h4>
+
+              <h2 class="info-header">fall limited edition <span class="next">sneakers</span></h2>
+
+              <p class="info-text">These Low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outaer sole, they'll withstand everything the weather can offer.</p>
+
+              <div class="price-flex">
+                  <div class="percentage-flex">
+                      <span class="percentage-amount">$125.00</span>
+                      <span class="percentage">50%</span>
+                  </div>
+                  <div class="initial-amount"><del>$250.00</del></div>
+              </div>
+
+              <div class="cart-section">
+                  <div class="quantity-section">
+                          <img src="./E.commerce/images/icon-minus.svg" alt="" class="minus">
+                          <span class="value">0</span>
+                          <img src="./E.commerce/images/icon-plus.svg" alt="" class="plus">
+                  </div>
+
+                  <button class="cart-button">
+                      <img src="./E.commerce/images/icon-cart-white.svg" alt="" class="cart-button-image">
+                      <span class="cart-button-text">Add to cart</span>
+                  </button>
+              </div>
+          </section>
+
+          <!-- info section end -->
+      </section>
+
+      <!-- flex section end-->
+
+      <section class="cart">
+          <h4 class="cart-heading">cart</h4>
+  
+          <div class="cart-item-container">
+              <!-- <div class="cart-item" id="cart-item">
+                  <img src="./E.commerce/images/image-product-1.jpg" alt="" class="cart-item-image">
+                  <div>
+                      <p class="cart-item-text">autumn limited edition...</p>
+                      <p class="single-price">$125.00 * 3 <span class="total">$375.00</span></p>
+                  </div>
+                  <img src="./E.commerce/images/icon-delete.svg" alt="" class="delete">
+              </div>  -->
+          </div>
+  
+          <button class="close-cart">checkout</button>
+      </section>
+  </main>
+
+  <!-- Main Section Ends -->
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+
+  
+  <script src="./E.commerce/script.js"></script>
+</body>
+</html>
