@@ -93,6 +93,7 @@ minus.addEventListener('click',function(){
 
     if(value.innerText < 0){
         alert("You can't order zero(0) items");
+        value.innerText = 0
     }
 })
 
@@ -142,7 +143,7 @@ cartButton.addEventListener('click', function(event){
 
     let val = document.querySelector('.value')
     
-    if(val.innerText == 0){
+    if(val.innerText == "0"){
         alert("You can't order 0 of this item")
         return;
     }
