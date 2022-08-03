@@ -53,6 +53,7 @@ const cartButton = document.querySelector('.cart-button');
 
 window.addEventListener('DOMContentLoaded', function() {
     mergeItems();
+
 });
 
 // Image Switch on Mobile View.
@@ -93,7 +94,7 @@ minus.addEventListener('click',function(){
 
     if(value.innerText < 0){
         alert("You can't order zero(0) items");
-        value.innerText = 0
+        value.innerText = 0;
     }
 })
 
@@ -122,11 +123,15 @@ const cart = document.querySelector('.cart')
 
 cartBtn.addEventListener('click', function(){
     cart.classList.toggle('show-cart')
-    
+    emptyCart();
 })
 
 
-// Add Cart Items.
+
+
+
+
+//--------------------------- Add Cart Items. ----------------------
 
 const closeCart = document.querySelector('.close-cart');
 
@@ -139,7 +144,7 @@ cartButton.addEventListener('click', function(event){
 
     var amountText = parseFloat(amountText.slice(1));
     var valueValue = parseFloat(valueValue);
-    // console.log(amountText);
+    // console.log(container);
 
     let val = document.querySelector('.value')
     
@@ -148,13 +153,33 @@ cartButton.addEventListener('click', function(event){
         return;
     }
 
+    val.innerText = "0";
+
     cart.classList.add('show-cart');
+
     addToCart(imageSrc, amountText, valueValue);
+    emptyCart();
 });
 
 
+
+let cartArray = [];
 function addToCart(imageSrc, amountText, valueValue){
     var cartRow = document.createElement('div');
+
+    let myImage = document.querySelector('#big-image');
+    // for(let i=0; i < myImage.length; i++){
+        // if(myImage.src == imageSrc){
+        //     alert("This item has already been added to your cart!")
+        //     // console.log(true);
+        //     // console.log(myImage.src);
+        //     // console.log(imageSrc);
+        //     return;
+        // }
+        // else{
+        //     console.log(false);
+        // }
+    // }
 
     cartRow.innerHTML = `
         <div class="cart-item" id="cart-item">
@@ -163,24 +188,29 @@ function addToCart(imageSrc, amountText, valueValue){
                 <p class="cart-item-text">${'autumn limited edition...'}</p>
                 <p class="single-price">$${amountText} x ${valueValue} <span class="total">$${amountText*valueValue} </span></p>
             </div>
-            <img src="./E.commerece/images/icon-delete.svg" alt="" class="delete">
+            <img src="./E.commerce/images/icon-delete.svg" alt="" class="delete">
         </div>`
 
     cart.insertBefore(cartRow, closeCart);
-    // console.log(cart);
 
     var dels = document.querySelectorAll('.delete');
     dels.forEach(function(del){
         del.addEventListener('click', function(event){
         event.target.parentElement.parentElement.remove();
+        emptyCart();
         })
     })
-
 };
+
+
+
+
+
+
 
 // Checkout Cart Button.
 
-const cartContainer = document.querySelector('.cart-item-container')
+const cartContainer = document.querySelector('.cart-item-container');
 
 closeCart.addEventListener('click', function(){
     var dels = document.querySelectorAll('.delete');
@@ -191,7 +221,34 @@ closeCart.addEventListener('click', function(){
     }
 
     cart.classList.remove('show-cart');
+    emptyCart();
 })
 
 
-//Empty Cart When Necessary.
+
+
+//  Image-avatar
+
+document.querySelector('.image-avatar').addEventListener('click', function(){
+    document.querySelector('.image-avatar').classList.toggle('avatar'); 
+});
+
+
+
+
+// Empty Cart Function.
+
+function emptyCart(){
+    let cartItemCont = document.querySelector('.cart-item-container');
+    let cartItem = document.querySelector('.cart-item')
+    if(cartItem){
+        // console.log(true);
+        cartItemCont.classList.remove('empty-cart');
+        closeCart.style.display = "block";
+
+    } else{
+        cartItemCont.classList.add('empty-cart');
+        closeCart.style.display = "none";
+        // console.log(false);
+    }
+}
